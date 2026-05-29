@@ -355,3 +355,12 @@ button {
   }
 }
 
+/* Gallery Showcase Styling */
+.gallery-container:hover .gallery-overlay {
+  opacity: 1 !important;
+}
+
+.gallery-container:hover .gallery-img {
+  transform: scale(1.08) !important;
+}
+

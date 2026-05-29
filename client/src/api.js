@@ -68,3 +68,62 @@ export const deleteOrder = async (id, token) => {
     throw error.response?.data || error.message;
   }
 };
+
+// Artwork Showcase APIs
+export const getArtworks = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/products`);
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+};
+
+export const addArtwork = async (formData, token) => {
+  try {
+    const response = await axios.post(`${API_URL}/products`, formData, {
+      headers: { 
+        Authorization: token,
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+};
+
+export const deleteArtwork = async (id, token) => {
+  try {
+    const response = await axios.delete(`${API_URL}/products/${id}`, {
+      headers: { Authorization: token }
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+};
+
+// About Details APIs
+export const getAboutDetails = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/about`);
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+};
+
+export const updateAboutDetails = async (formData, token) => {
+  try {
+    const response = await axios.put(`${API_URL}/about`, formData, {
+      headers: { 
+        Authorization: token,
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+};

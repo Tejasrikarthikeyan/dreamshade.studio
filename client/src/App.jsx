@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Cursor from './components/Cursor';
 import Home from './pages/Home';
 import About from './pages/About';
-import Shop from './pages/Shop';
+import Collection from './pages/Collection';
 import Cart from './pages/Cart';
 import Commission from './pages/Commission';
 import AdminLogin from './pages/AdminLogin';
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path="/collection" element={<Collection />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/commission" element={<Commission />} />
             <Route path="/admin/login" element={<AdminLogin />} />
@@ -29,7 +29,7 @@ function App() {
         </main>
         <footer className="footer">
           <div className="container">
-            <p>&copy; {new Date().getFullYear()} Naveen Art's. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} dreamshade.studio. All rights reserved.</p>
           </div>
         </footer>
       </div>

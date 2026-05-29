@@ -9,8 +9,8 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container nav-content">
         <Link to="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <img src="/logo.jpg" alt="Naveen Art's Logo" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
-          <span style={{ paddingTop: '0.25rem' }}>Naveen Art's</span>
+          <img src="/logo.jpg" alt="dreamshade.studio Logo" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+          <span style={{ paddingTop: '0.25rem' }}>dreamshade.studio</span>
         </Link>
         
         <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
@@ -20,11 +20,8 @@ const Navbar = () => {
         <div className={`nav-links ${isOpen ? 'mobile-open' : ''}`}>
           <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>Home</Link>
           <Link to="/about" className="nav-link" onClick={() => setIsOpen(false)}>About</Link>
-          <Link to="/shop" className="nav-link" onClick={() => setIsOpen(false)}>Art Shop</Link>
+          <Link to="/collection" className="nav-link" onClick={() => setIsOpen(false)}>Collection</Link>
           <Link to="/commission" className="nav-link" style={{ color: 'var(--accent)' }} onClick={() => setIsOpen(false)}>Custom Drawing</Link>
-          <Link to="/cart" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} onClick={() => setIsOpen(false)}>
-            <ShoppingCart size={20} />
-          </Link>
         </div>
       </div>
     </nav>

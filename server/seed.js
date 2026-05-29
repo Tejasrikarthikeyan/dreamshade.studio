@@ -9,20 +9,22 @@ const seedAdmin = async () => {
     console.log('Connected to DB');
 
     // Check if admin exists
-    const existing = await User.findOne({ email: 'admin@naveenink.com' });
+    const existing = await User.findOne({ email: 'admin@dreamshade.studio' });
+    const hash = await bcrypt.hash('admin123', 10);
+
     if (existing) {
-      console.log('Admin already exists!');
+      existing.password = hash;
+      await existing.save();
+      console.log('Admin password reset successfully! Email: admin@dreamshade.studio, Pass: admin123');
       process.exit(0);
     }
-
-    const hash = await bcrypt.hash('admin123', 10);
     const admin = new User({
-      email: 'admin@naveenink.com',
+      email: 'admin@dreamshade.studio',
       password: hash
     });
 
     await admin.save();
-    console.log('Admin seeded successfully! Email: admin@naveenink.com, Pass: admin123');
+    console.log('Admin seeded successfully! Email: admin@dreamshade.studio, Pass: admin123');
     process.exit(0);
   } catch (error) {
     console.error(error);
